@@ -18,25 +18,18 @@ header p {
   padding-left: 0.3em;
 }
 
-.role{
-  height: 4em;
-  width: 3em;
+.captain-div {
+    color: #FFF;
 }
 
-.selected-items div img{
-  max-height: 96px;
-  max-width: 96px;  
+.carry-div {
+    color: #FFF;
 }
 
-.item-pic{
-  max-height: 96px;
-  max-width: 96px;
+.jungler-div {
+    color: #FFF;
 }
 
 .proceed-btn{
   padding: 1em;
-}
-
-.phpData{
-  font-size: 0;
 }
