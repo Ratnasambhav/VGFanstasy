@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Rubik:300,400');
+
+body {
+  background: url('Images/BG2.png') no-repeat center center fixed;
+  background-size: cover;
+}
+header {
+  font-family: 'Permanent Marker', cursive;
+  color: #FFD700;
+  font-size: 60px;
+  margin-top: -1em;
+
+}
+header a {
+  color: #FFD700;
+}
+header p {
+  padding-left: 0.3em;
+}
