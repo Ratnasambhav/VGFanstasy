@@ -24,7 +24,7 @@ header p {
 }
 
 .role {
-  heigth: 4em;
+  height: 7em;
   width: 4em;
   padding: 1em 0 1em 0;
 }
@@ -36,4 +36,8 @@ header p {
 
 .proceed-btn{
   padding: 1em;
+}
+
+.php-data{
+  font-size: 0em;
 }

@@ -27,6 +27,8 @@ function captain(hero) {
   if (heroCheck(hero)) {
     const img = document.querySelector('.captain-img');
     const name = document.querySelector('.captain-name');
+    const phpCaptain = document.querySelector('#cap-n');
+    phpCaptain.innerHTML = hero;
     img.src = `Images/VGPics/VG Hero Portraits/${hero}.png`;
     name.innerHTML = `<h5>${toTitleCase(hero)}</h5>`;
   }
@@ -36,6 +38,8 @@ function carry(hero) {
   if (heroCheck(hero)) {
     const img = document.querySelector('.carry-img');
     const name = document.querySelector('.carry-name');
+    const phpCarry = document.querySelector('#car-n');
+    phpCarry.innerHTML = hero;
     img.src = `Images/VGPics/VG Hero Portraits/${hero}.png`;
     name.innerHTML = `<h5>${toTitleCase(hero)}</h5>`;
   }
@@ -45,6 +49,8 @@ function jungler(hero) {
   if (heroCheck(hero)) {
     const img = document.querySelector('.jungler-img');
     const name = document.querySelector('.jungler-name');
+    const phpJungler = document.querySelector('#jung-n');
+    phpJungler.innerHTML = hero;
     img.src = `Images/VGPics/VG Hero Portraits/${hero}.png`;
     name.innerHTML = `<h5>${toTitleCase(hero)}</h5>`;
   }

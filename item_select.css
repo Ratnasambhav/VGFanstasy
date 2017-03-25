@@ -36,3 +36,7 @@ header p {
 .proceed-btn{
   padding: 1em;
 }
+
+.phpData{
+  font-size: 0;
+}
