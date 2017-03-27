@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="welcome.css">
+    <script src="loader.js"></script>
 </head>
 
 <body>
@@ -78,6 +79,16 @@
                             </span>
                         </div>
                     </li>
+                    <li>
+                        <div class="collapsible-header transparent white-text">
+                            4. How are winners decided?
+                        </div>
+                        <div class="collapsible-body">
+                            <span>
+                                We collect from matched played all over the world. Using this data we decide the kills, assists and deaths of every hero on you team with respect with the enemy heroes. Same is done for the enemy team. The outcome depends on the hero builds. The team with the better kill, assists and death score wins. 
+                            </span>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="col m4 s12 center-align proceed-btn">
@@ -85,7 +96,7 @@
                     <a href="hero_select.html" class="waves-effect waves-light btn-large amber-text black">Team</a>
                 </div>
                 <div class="row">
-                    <a href="!#" class="waves-effect waves-light btn-large amber-text black">Battle</a>
+                    <a href="#" class="waves-effect waves-light btn-large amber-text black" onclick="Materialize.toast('Match Found', 4000); setInterval(toasta, 1000);">Battle</a>
                 </div>
             </div>
         </div>
@@ -97,7 +108,7 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.button-collapse').sideNav();
             $('.tooltipped').tooltip({
                 delay: 50
