@@ -8,10 +8,7 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-$servername = "localhost";
-$username = "id935168_vg";
-$password = "VG12345";
-$database = "id935168_vg";
+
 // Create connection
 $con = mysqli_connect($servername, $username, $password, $database);
 // Check connection
