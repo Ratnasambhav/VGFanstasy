@@ -2,7 +2,7 @@
   <html>
 
   <head>
-      <meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
       <title>VG Fantasy</title>
       <script src="jquery-3.1.1.min.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
