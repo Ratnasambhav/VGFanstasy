@@ -2,7 +2,7 @@
   <html>
 
   <head>
-      <meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
       <title>VG Fantasy</title>
       <script src="jquery-3.1.1.min.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -30,7 +30,6 @@ function toasta() {
     $data = htmlspecialchars($data);
     return $data;
   }
-
   // Create connection
   $con = mysqli_connect($servername, $username, $password, $database);
   // Check connection
@@ -207,25 +206,9 @@ $dSum1=round($R1[$O1[0]]["D"])+round($R1[$O1[1]]["D"])+round($R1[$O1[2]]["D"]);
 $kSum2=round($R2[$O2[0]]["K"])+round($R2[$O2[1]]["K"])+round($R2[$O2[2]]["K"]);
 $aSum2=round($R2[$O2[0]]["A"])+round($R2[$O2[1]]["A"])+round($R2[$O2[2]]["A"]);
 $dSum2=round($R2[$O2[0]]["D"])+round($R2[$O2[1]]["D"])+round($R2[$O2[2]]["D"]);
-if(2*($kSum1)+$aSum1-($dSum1)>2*($kSum2)+$aSum2-($dSum2))
-$status="VICTORY";
-else {
-  $status="DEFEAT";
-}
-$u=$_SESSION["user"];
-if($status=="VICTORY")
-{   echo $P2;
-  $result3=mysqli_query($con,"UPDATE users SET WIN=WIN+1 WHERE USERNAME='$u'");
-    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$u'");
-    mysqli_error($con);
-    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$P2'");
-}
-else
-{$result3=mysqli_query($con,"UPDATE users SET WIN=WIN+1 WHERE USERNAME='$P2'");
-    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$P2'");
-    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$u'");
 
-}
+//echo $aSum1."asdasdasd".$aSum2;
+
 if($kSum1!=0)
 {
 $R1[$O1[0]]["K"]=$R1[$O1[0]]["K"]*$dSum2/$kSum1;
@@ -245,9 +228,41 @@ $R2[$O2[1]]["K"]=$R2[$O2[1]]["K"]*$dSum1/$kSum2;
 $R2[$O2[2]]["K"]=$dSum1-$R2[$O2[0]]["K"]-$R2[$O2[1]]["K"];
 }
 else
-{$R2[$O2[0]]["K"]=$dSum1/3;
+{
+$R2[$O2[0]]["K"]=$dSum1/3;
 $R2[$O2[1]]["K"]=$dSum1/3;
 $R2[$O2[2]]["K"]=$dSum1-$R2[$O2[0]]["K"]-$R2[$O2[1]]["K"];
+}
+$kSum1=round($R1[$O1[0]]["K"])+round($R1[$O1[1]]["K"])+round($R1[$O1[2]]["K"]);
+$aSum1=round($R1[$O1[0]]["A"])+round($R1[$O1[1]]["A"])+round($R1[$O1[2]]["A"]);
+$dSum1=round($R1[$O1[0]]["D"])+round($R1[$O1[1]]["D"])+round($R1[$O1[2]]["D"]);
+$kSum2=round($R2[$O2[0]]["K"])+round($R2[$O2[1]]["K"])+round($R2[$O2[2]]["K"]);
+$aSum2=round($R2[$O2[0]]["A"])+round($R2[$O2[1]]["A"])+round($R2[$O2[2]]["A"]);
+$dSum2=round($R2[$O2[0]]["D"])+round($R2[$O2[1]]["D"])+round($R2[$O2[2]]["D"]);
+$R1[$O1[0]]["A"]=$R1[$O1[0]]["A"]*$kSum1/$aSum1;
+$R1[$O1[1]]["A"]=$R1[$O1[1]]["A"]*$kSum1/$aSum1;
+$R1[$O1[2]]["A"]=$R1[$O1[2]]["A"]*$kSum1/$aSum1;
+$R2[$O2[0]]["A"]=$R2[$O2[0]]["A"]*$kSum2/$aSum2;
+$R2[$O2[1]]["A"]=$R2[$O2[1]]["A"]*$kSum2/$aSum2;
+$R2[$O2[2]]["A"]=$R2[$O2[2]]["A"]*$kSum2/$aSum2;
+if(2*($kSum1)+$aSum1-($dSum1)>2*($kSum2)+$aSum2-($dSum2))
+$status="VICTORY";
+else {
+  $status="DEFEAT";
+}
+$u=$_SESSION["user"];
+if($status=="VICTORY")
+{  // echo $P2;
+  $result3=mysqli_query($con,"UPDATE users SET WIN=WIN+1 WHERE USERNAME='$u'");
+    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$u'");
+    mysqli_error($con);
+    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$P2'");
+}
+else
+{$result3=mysqli_query($con,"UPDATE users SET WIN=WIN+1 WHERE USERNAME='$P2'");
+    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$P2'");
+    $result3=mysqli_query($con,"UPDATE users SET PLAYED=PLAYED+1 WHERE USERNAME='$u'");
+
 }
   //print_r($TD2);
   //print_r($TD1);
