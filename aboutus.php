@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>VG Fantasy</title>
     <script src="jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -22,6 +22,39 @@
             Materialize.toast(messages[num], 4000);
         }
     </script>
+<?php
+session_start();
+//error_reporting(E_ERROR);
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+$servername = "localhost";
+$username = "id935168_vg";
+$password = "vitvellore123";
+$database = "id935168_vg";
+// Create connection
+$con = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql="SELECT * FROM users";
+$sql2=mysqli_query($con,$sql);
+while($row=mysqli_fetch_assoc($sql2))
+{
+  if($row["USERNAME"]==$_SESSION["user"])
+  {
+    $wins=$row["WIN"];
+    $played=$row["PLAYED"];
+    $email=$row["EMAIL"];
+  }
+}
+
+?>
     <ul id="slide-out" class="side-nav amber lighten-1">
         <li>
             <div class="userView">
@@ -55,6 +88,7 @@
                 <div class="card blue-grey darken-4">
                     <div class="card-content white-text">
                         <span class="card-title">Karthik Rajaraman</span>
+<p>Age : 19 </p>
                         <p>I mostly play as support. Chaterine, Lyra and Joule are my main heroes. Love to code and build stuff anytime, anywhere.<br>Student at VIT Vellore, India.</p>
                     </div>
                     <div class="card-action">
@@ -67,6 +101,7 @@
                 <div class="card blue-grey darken-4">
                     <div class="card-content white-text">
                         <span class="card-title">Ratnasambhav Priyadarshi</span>
+<p>Age : 18 </p>
                         <p>I mostly play as carry. Vox, Skye and Petal are my goto heroes. Love learning and building new things for the web.<br>Student at VIT Vellore, India.</p>
                     </div>
                     <div class="card-action">
@@ -91,4 +126,4 @@
     </script>
 </body>
 
-</html>>
+</html>
