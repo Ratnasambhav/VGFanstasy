@@ -8,7 +8,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 // Create connection
 $con = mysqli_connect($servername, $username, $password, $database);
 // Check connection
@@ -31,7 +30,7 @@ while($row=mysqli_fetch_assoc($sql2))
 }
 ?>
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>VG Fantasy</title>
     <script src="jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -138,7 +137,7 @@ function toasta() {
         </div>
     </div>
 <div class="container red-text">
-    Since we are currently operate of limited bandwidth, please reload the page when you see SQL or PHP errors. Sorry for the inconvinence.
+    Since we are currently operate on limited bandwidth, please reload the page when you see SQL or PHP errors. Sorry for the inconvinence.
 </div>
     <br><br><br>
     <div class="container white-text">
