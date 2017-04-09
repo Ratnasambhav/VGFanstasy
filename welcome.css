@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Rubik:300,400');
-
 body {
-  background: url('Images/BG2.png') no-repeat center center fixed;
-  background-size: cover;
+    background: url('Images/BG2.png') no-repeat center center fixed;
+    background-size: cover;
 }
-header {
-  font-family: 'Permanent Marker', cursive;
-  color: #FFD700;
-  font-size: 60px;
-  margin-top: -1em;
 
+header {
+    font-family: 'Permanent Marker', cursive;
+    color: #FFD700;
+    font-size: 60px;
+    margin-top: -1em;
 }
+
 header a {
-  color: #FFD700;
+    color: #FFD700;
 }
+
 header p {
-  padding-left: 0.3em;
+    padding-left: 0.3em;
 }
 
 .captain-div {
@@ -30,6 +31,18 @@ header p {
     color: #FFF;
 }
 
-.proceed-btn{
-  padding: 1em;
+.proceed-btn {
+    padding: 1em;
+}
+
+.Rank_1 {
+    font-size: 1.6em;
+}
+
+.Rank_2 {
+    font-size: 1.4em;
+}
+
+.Rank_3 {
+    font-size: 1.2em;
 }
